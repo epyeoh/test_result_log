@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite testsuitename="oeqa.runtime.dnf.DnfBasicTest">
+    <testcase testcasename="oeqa.runtime.dnf.DnfBasicTest.test_dnf_help">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+      <testlog></testlog>
+    </testcase>
+    <testcase testcasename="oeqa.runtime.dnf.DnfBasicTest.test_dnf_version">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+	  <testlog></testlog>
+    </testcase>
+  </testsuite>
+  <testsuite testsuitename="oeqa.runtime.dnf.DnfRepoTest">
+    <testcase testcasename="oeqa.runtime.dnf.DnfRepoTest.test_dnf_makecache">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+      <testlog></testlog>
+    </testcase>
+    <testcase testcasename="oeqa.runtime.dnf.DnfRepoTest.test_dnf_repoinfo">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+      <testlog></testlog>
+    </testcase>
+  </testsuite>
+</testsuites>

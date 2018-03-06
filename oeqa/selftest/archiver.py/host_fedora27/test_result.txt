@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite testsuitename="oeqa.selftest.archiver.Archiver">
+    <testcase testcasename="oeqa.selftest.archiver.Archiver.test_archiver_allows_to_filter_on_recipe_name">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+      <testlog></testlog>
+    </testcase>
+    <testcase testcasename="oeqa.selftest.archiver.Archiver.test_archiver_filters_by_type">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+      <testlog></testlog>
+    </testcase>
+  </testsuite>
+</testsuites>
