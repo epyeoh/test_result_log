@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite testsuitename="oeqa.selftest.modulename.classname">
+    <testcase testcasename="oeqa.selftest.modulename.classname.testcasename">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+      <testlog></testlog>
+    </testcase>
+    <testcase testcasename="oeqa.selftest.modulename.classname.testcasename">
+      <testprocedures></testprocedures>
+      <testresult></testresult>
+      <testlog></testlog>
+    </testcase>
+  </testsuite>
+</testsuites>
