@@ -1,0 +1,28 @@
+--- 
+testsuite: 
+  - 
+    testcase: 
+      - 
+        testcasename: oeqa.runtime.dnf.DnfBasicTest.test_dnf_help
+        testlog: ""
+        testprocedures: ""
+        testresult: ""
+      - 
+        testcasename: oeqa.runtime.dnf.DnfBasicTest.test_dnf_version
+        testlog: ""
+        testprocedures: ""
+        testresult: ""
+    testsuitename: oeqa.runtime.dnf.DnfBasicTest
+  - 
+    testcase: 
+      - 
+        testcasename: oeqa.runtime.dnf.DnfRepoTest.test_dnf_makecache
+        testlog: ""
+        testprocedures: ""
+        testresult: ""
+      - 
+        testcasename: oeqa.runtime.dnf.DnfRepoTest.test_dnf_repoinfo
+        testlog: ""
+        testprocedures: ""
+        testresult: ""
+    testsuitename: oeqa.runtime.dnf.DnfRepoTest
