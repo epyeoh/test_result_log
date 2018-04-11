@@ -103,7 +103,3 @@ class TestEnvMatrixCreator(object):
 
     def push_testsuite_testcase_json_file_to_git_repo(self, file_dir, git_repo):
         return subprocess.run(["oe-git-archive", file_dir, "-g", git_repo])
-
-
-
-
