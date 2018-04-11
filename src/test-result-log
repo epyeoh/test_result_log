@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+
+scripts_path = os.path.dirname(os.path.realpath(__file__))
+lib_path = scripts_path + '/lib'
+sys.path = sys.path + [lib_path]
+from testresultlog.testmatrixcreator import TestEnvMatrixCreator
+
+def main():
+    poky_top_dir = os.path.abspath('..')
+    print(poky_top_dir)
+    oeqa_dir = os.path.join(poky_top_dir, 'meta/lib/oeqa')
+    print(oeqa_dir)
+    selftest_dir = os.path.join(oeqa_dir, 'selftest/cases')
+    print(selftest_dir)
+    
+    test_matrix_creator = TestEnvMatrixCreator()
+    test_suite = test_matrix_creator.load_test_module_and_test_function(selftest_dir)
+    test_moduleclass_function_dict = test_matrix_creator.generate_test_moduleclass_key_test_function_value_dictionary(test_suite)
+    
+    print('DEBUG: print generated matrix')
+    for key in sorted(list(test_moduleclass_function_dict.keys())):
+        print('key (%s)' % (key))
+        print('value (%s)' % (test_moduleclass_function_dict[key]))
+    
+    print('DEBUG: print generated json output')
+    #json_encode = test_matrix_creator.generate_test_matrix_file_output(test_matrix)
+    #print(json_encode)
+    
+    print('DEBUG: print generated module class list')
+    module_class_dict = test_matrix_creator.generate_test_module_key_test_moduleclass_value_dictionary(test_moduleclass_function_dict.keys())
+    #print(module_class_dict)
+    
+    output_file_dir = os.path.join(scripts_path, 'test-results-new')
+    print('DEBUG: print generated module json structure')
+    for module_key in sorted(list(module_class_dict.keys())):
+        module_json_structure = test_matrix_creator.generate_testsuite_testcase_json_data_structure(module_class_dict[module_key], test_moduleclass_function_dict)
+        print('DEBUG: print generated module json structure for %s' % module_key)
+        print(module_json_structure)
+        file_name = 'testresult_%s.json' % module_key
+        #path_to_write_file = os.path.join(scripts_path, 'test-results')
+        file_path = os.path.join(output_file_dir, file_name)
+        print('DEBUG: path to write file: %s' % file_path)
+        test_matrix_creator.write_testsuite_testcase_json_data_structure_to_file(file_path, module_json_structure)
+    
+    git_repo_dir = os.path.join(scripts_path, 'test-results-new-repo')
+    test_matrix_creator.push_testsuite_testcase_json_file_to_git_repo(output_file_dir, git_repo_dir)
+
+if __name__ == '__main__':
+    sys.exit(main())
